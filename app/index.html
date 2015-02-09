@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="js">
+  <head>
+    <meta charset="utf-8">
+    <title>Black Market Systems</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel='stylesheet' href='bower_components/angular-material/angular-material.css' />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <link href='http://fonts.googleapis.com/css?family=roboto:400,500,700,400italic' rel='stylesheet' type='text/css'>
+    
+  </head>
+  <body ng-app="bms" layout="column" layout-align="top center">
+    <!--[if lt ie 7]>
+      <p class="browsehappy">you are using an <strong>outdated</strong> browser. please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- add your site or application content here -->
+    
+    <nav layout="row">
+      <md-toolbar>
+      <div class="md-toolbar-tools"  
+        class="md-primary" ng-controller="MainCtrl">
+        <button flex="10" ng-click="toggleSidenav('left')" class="menuBtn">
+        </button>
+        <div flex="80"></div>
+        <md-button flex="20" ng-click="showGridBottomSheet($event)">
+        Show as Grid
+        </md-button>
+      </div>
+      </md-toolbar>
+    </nav>
+
+    <div layout="row" flex>
+      <div layout="column" flex id="content">
+        <md-content layout="column" class="md-padding">
+         <div ui-view></div>
+        </md-content>
+      </div>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/hammerjs/hammer.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="bower_components/ng-messages/angular-messages.js"></script>
+    <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/app.config.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/angularfire/config.js"></script>
+        <script src="scripts/angularfire/firebase.utils.js"></script>
+        <script src="scripts/controllers/chat.js"></script>
+        <script src="scripts/filters/reverse.js"></script>
+        <script src="scripts/angularfire/simpleLogin.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/account.js"></script>
+        <script src="scripts/directives/ngShowAuth.js"></script>
+        <script src="scripts/directives/ngHideAuth.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
