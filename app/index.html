@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Black Market Systems</title>
+    <base href="/"></base>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -14,35 +15,17 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <link href='http://fonts.googleapis.com/css?family=roboto:400,500,700,400italic' rel='stylesheet' type='text/css'>
-    
+   <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700' rel='stylesheet' type='text/css'> 
   </head>
-  <body ng-app="bms" layout="column" layout-align="top center">
+  <body ng-app="bms" layout="column">
     <!--[if lt ie 7]>
       <p class="browsehappy">you are using an <strong>outdated</strong> browser. please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- add your site or application content here -->
-    
-    <nav layout="row">
-      <md-toolbar>
-      <div class="md-toolbar-tools"  
-        class="md-primary" ng-controller="MainCtrl">
-        <button flex="10" hide-gt-sm ng-click="toggleSidenav('left')" class="menuBtn">
-        </button>
-        <div flex="80"></div>
-        <md-button flex="20" ng-click="showGridBottomSheet($event)">
-        Show as Grid
-        </md-button>
-      </div>
-      </md-toolbar>
-    </nav>
-
-    <div layout="row" flex>
-      <div layout="column" flex id="content">
-        <md-content layout="column" class="md-padding">
-         <div ui-view></div>
-        </md-content>
+    <div layout="row">
+      <div class="ui-view-container">
+        <div class="well" ui-view></div>        
       </div>
     </div>
 

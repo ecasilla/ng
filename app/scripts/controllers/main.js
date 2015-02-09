@@ -21,7 +21,7 @@ angular.module('bms',['ngMaterial'])
 
   $scope.showGridBottomSheet = function($event) {
     $mdBottomSheet.show({
-      templateUrl: '../views/footer.html',
+      templateUrl: '../views/common/footer.html',
       controller: 'FooterCtrl',
       targetEvent: $event
     }).then(function(clickedItem) {

@@ -1,23 +1,32 @@
-angular.module('bms',['ui.router','ngMaterial'])
-.config(function($urlRouterProvider,$stateProvider,$locationProvider,$mdThemingProvider) {
 'use-strict';
 
+angular.module('bms',['ui.router','ngMaterial'])
+
+.config(function($urlRouterProvider,$stateProvider,$locationProvider,$mdThemingProvider) {
+
+  //$locationProvider.html5Mode(true);
+
   $mdThemingProvider.theme('default')
-            .primaryPalette('pink')
-            .accentPalette('orange');
+  .primaryPalette('blue')
+  .accentPalette('gray');
 
   $urlRouterProvider.otherwise('/');
 
-  $locationProvider.html5Mode(true);
 
   $stateProvider
   .state('chat', {
+    url: '/chat',
+    templateUrl: '../views/chat/chat.html',
+    controller: 'ChatCtrl'
+  })  
+  .state('main', {
     url: '/',
-    templateUrl: '../views/chat.html'
+    templateUrl: '../views/common/main.html',
+    controller: 'MainCtrl'
   })  
   .state('login', {
     url: '/login',
-    templateUrl: '../views/login.html',
+    templateUrl: '../views/account/login.html',
     controller: 'LoginCtrl'
   });
 });
