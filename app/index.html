@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Black Market Systems</title>
-    <base href="/"></base>
-    <meta name="description" content="">
+    <meta name="description" content="A Real Estate Platform">
     <meta name="viewport" content="width=device-width">
     <!-- place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel='stylesheet' href='bower_components/angular-material/angular-material.css' />
+    <link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.css' />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
+    <!-- build:css(.tmp) styles/*.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700' rel='stylesheet' type='text/css'> 
@@ -21,14 +21,21 @@
     <!--[if lt ie 7]>
       <p class="browsehappy">you are using an <strong>outdated</strong> browser. please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div class="site-loading" ng-show="false">
+        <div class="spinner"></div>
+    </div>
+    
+
+    <noscript>
+      <div>
+        <h3>Javascript is deactivated. You must <a href="http://www.activatejavascript.org/">activate javascript</a> in order to use this site.</h3>
+      </div>
+    </noscript>
+
 
     <!-- add your site or application content here -->
-    <div layout="row">
-      <div class="ui-view-container">
-        <div class="well" ui-view>
-        </div>        
-        <h1>Test</h1>
-      </div>
+    <div class="ng-cloak view-change-animation">
+      <div ui-view></div>        
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -60,22 +67,51 @@
     <script src="bower_components/angularfire/dist/angularfire.js"></script>
     <script src="bower_components/ng-messages/angular-messages.js"></script>
     <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/app.config.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/angularfire/config.js"></script>
-        <script src="scripts/angularfire/firebase.utils.js"></script>
-        <script src="scripts/controllers/chat.js"></script>
-        <script src="scripts/filters/reverse.js"></script>
-        <script src="scripts/angularfire/simpleLogin.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/controllers/account.js"></script>
-        <script src="scripts/directives/ngShowAuth.js"></script>
-        <script src="scripts/directives/ngHideAuth.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="states/index/index/index.js"></script>
+    <script src="states/mail/bookmarked/index/bookmarked-controller.js"></script>
+    <script src="states/faq/index/faq-controller.js"></script>
+    <script src="states/mail/compose/index/compose-controller.js"></script>
+    <script src="states/mail/draft/index/draft-controller.js"></script>
+    <script src="states/mail/inbox/index/inbox-controller.js"></script>
+    <script src="states/mail/index/mail-controller.js"></script>
+    <script src="states/mail/sent/index/sent-controller.js"></script>
+    <script src="states/mail/trash/index/trash-controller.js"></script>
+    <script src="states/settings/account/index/account-controller.js"></script>
+    <script src="states/settings/email/index/email-controller.js"></script>
+    <script src="states/settings/index/settings-controller.js"></script>
+    <script src="states/settings/notifications/index/notifications-controller.js"></script>
+    <script src="states/settings/organization/index/organization-controller.js"></script>
+    <script src="states/settings/security/index/security-controller.js"></script>
+    <script src="states/support/index/support-controller.js"></script>
+    <script src="states/user/index/user-controller.js"></script>
+
+    <script src="utils/deep_extend.js"></script>
+    <script src="utils/log.js"></script>
+    <script src="config/local.js"></script>
+    <script src="config/config.js"></script>
+    
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/angularfire/config.js"></script>
+    <script src="scripts/angularfire/firebase.utils.js"></script>
+    <script src="scripts/controllers/chat.js"></script>
+    <script src="scripts/filters/reverse.js"></script>
+    <script src="scripts/angularfire/simpleLogin.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/account.js"></script>
+    <script src="scripts/directives/ngShowAuth.js"></script>
+    <script src="scripts/directives/ngHideAuth.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) states/scripts.js -->
+        
         <!-- endbuild -->
+        
 </body>
 </html>

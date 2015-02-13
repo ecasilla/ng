@@ -7,8 +7,10 @@
 * # MainCtrl
 * Controller of the bmsApp
 */
-angular.module('bms',['ngMaterial'])
-.controller('MainCtrl', function ($scope,$mdSidenav,$timeout, $mdBottomSheet,$location) {
+angular.module('bms')
+.controller('MainCtrl', 
+
+function ($scope,$mdSidenav,$timeout,$mdBottomSheet,$location) {
   /**
   * Hide or Show the sideNav area
   * @param menuId
@@ -21,15 +23,15 @@ angular.module('bms',['ngMaterial'])
 
   $scope.showGridBottomSheet = function($event) {
     $mdBottomSheet.show({
-      templateUrl: '../views/common/footer.html',
-      controller: 'FooterCtrl',
+      templateUrl: '../../views/common/footer_grid.html',
+      controller: 'GridCtrl',
       targetEvent: $event
     }).then(function(clickedItem) {
       $location.path(clickedItem.name);
     });
   };
 })
-.controller('FooterCtrl', function($scope, $mdBottomSheet) {
+.controller('GridCtrl', function($scope, $mdBottomSheet) {
   $scope.items = [
     { name: 'Mail', icon: 'mail' },
     { name: 'Message', icon: 'message' },

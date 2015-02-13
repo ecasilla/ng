@@ -9,10 +9,11 @@
  * filter of the app
  */
 
+ /*global moment:false */
 angular.module('bms')
   .filter('fromNow', function () {
     return function (date) {
-      return moment(data).formNow();
+      return moment(date).formNow();
     };
   });
 
